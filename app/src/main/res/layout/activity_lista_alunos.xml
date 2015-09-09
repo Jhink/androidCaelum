@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ListView
+        android:id="@+id/lista_alunos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></ListView>
+
+    <Button
+        android:id="@+id/lista_botao"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/fundo"
+        android:text= "+"
+        android:textSize = "40sp"
+        android:textColor = "#fff"
+        android:elevation = "12dp"
+        android:layout_marginBottom = "10dp"
+        android:layout_marginRight = "10dp"
+        android:paddingBottom = "16dp"
+        android:stateListAnimator = "@null"
+        />
+
+
+</RelativeLayout>
