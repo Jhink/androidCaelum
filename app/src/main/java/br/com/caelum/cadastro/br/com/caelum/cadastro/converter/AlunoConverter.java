@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONStringer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.caelum.cadastro.modelo.Aluno;
 
@@ -15,16 +16,20 @@ public class AlunoConverter {
     JSONStringer jsonStringer = new JSONStringer();
 
 
+        public String toJSON(List<Aluno> alunos){
+            try{
+                JSONStringer jsonStringer = new JSONStringer();
+                jsonStringer.object().key("list").array().object().key("aluno").array();
 
-        ArrayList<Aluno> alunos = jsonStringer.object().key("list").array().object().key("aluno").array();
+                for(Aluno aluno : alunos){
+                   JSON json = jsonStringer.object().key("id").value(aluno.getId()).key("nome").value(aluno.getNome()).endObject();
+                }
 
 
-        for(Aluno aluno : alunos){
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
-                jsonStringer.object().key("id").value(aluno.getId()).key("nome").value(aluno.getNome()).endObject();
+            return
         }
-
-        String json = jsonStringer.endArray().endObject().endArray().endObject().toString();
-
-
 }
