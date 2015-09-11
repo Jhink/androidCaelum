@@ -108,6 +108,11 @@ public class ListaAlunosActivity extends ActionBarActivity {
                 String resposta = client.post(json);
                 Toast.makeText(this, resposta, Toast.LENGTH_LONG).show();
 
+            case R.id.menu_receber_provas:
+                Intent provas = new Intent(this, ProvasActivity.class);
+                startActivity(provas);
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);
