@@ -17,12 +17,13 @@ public class AlunoConverter {
 
 
         public String toJSON(List<Aluno> alunos){
+            JSONStringer json = null;
             try{
                 JSONStringer jsonStringer = new JSONStringer();
                 jsonStringer.object().key("list").array().object().key("aluno").array();
 
                 for(Aluno aluno : alunos){
-                   JSON json = jsonStringer.object().key("id").value(aluno.getId()).key("nome").value(aluno.getNome()).endObject();
+                   json = jsonStringer.object().key("id").value(aluno.getId()).key("nome").value(aluno.getNome()).endObject();
                 }
 
 
@@ -30,6 +31,6 @@ public class AlunoConverter {
                 e.printStackTrace();
             }
 
-            return
+            return json.toString();
         }
 }
